@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="pressu.red">
+    <meta property="og:description" content="@storm">
+    <title>pressu.red</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: url("background.png") center / cover no-repeat fixed;
+            color: white;
+            font-family: "Courier New", monospace;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            body {
+                cursor: none;
+            }
+        }
+
+        #custom-cursor {
+            position: fixed;
+            width: 16px;
+            height: 16px;
+            background: url("cursor.png") center / contain no-repeat;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-2px, -2px);
+        }
+
+        #frontpage {
+            position: fixed;
+            inset: 0;
+            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, .45);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .8s ease;
+            z-index: 10;
+        }
+
+        #frontpage pre {
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.2;
+            user-select: none;
+        }
+
+        #enter {
+            position: absolute;
+            bottom: 40px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            opacity: .8;
+        }
+
+        #page2 {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        #topbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            background: rgba(0, 0, 0, .35);
+            backdrop-filter: blur(6px);
+            z-index: 5;
+        }
+
+        .pixel {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        #separator {
+            width: 1px;
+            height: 18px;
+            background: white;
+            opacity: .25;
+            margin: 0 12px;
+        }
+
+        #discord a {
+            display: flex;
+            align-items: center;
+            color: white;
+            pointer-events: auto;
+            transition: transform .15s ease, opacity .15s ease;
+        }
+
+        #discord a:hover {
+            transform: scale(1.15);
+            opacity: 1;
+            cursor: none !important;
+        }
+
+
+        #discord svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        #center {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #center pre {
+            font-size: 15px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        #typewriter {
+            font-family: "Pixelify Sans", monospace;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            height: 18px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            #frontpage pre {
+                font-size: 12px;
+            }
+
+            #center pre {
+                font-size: 11px;
+            }
+
+            #typewriter {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="custom-cursor"></div>
+
+    <audio id="bgm" src="song.mp3" loop></audio>
+
+    <div id="frontpage">
+        <pre>
+▛▀▖▛▀▖▛▀▘▞▀▖▞▀▖▌ ▌▛▀▖▛▀▘▛▀▖
+▙▄▘▙▄▘▙▄ ▚▄ ▚▄ ▌ ▌▙▄▘▙▄ ▌ ▌
+▌  ▌▚ ▌  ▖ ▌▖ ▌▌ ▌▌▚ ▌  ▌ ▌
+▘  ▘ ▘▀▀▘▝▀ ▝▀ ▝▀ ▘ ▘▀▀▘▀▀ 
+</pre>
+        <div id="enter">click anywhere to enter</div>
+    </div>
+
+    <div id="page2">
+        <div id="topbar">
+            <div class="pixel">pressu.red</div>
+            <div id="separator"></div>
+            <div id="discord">
+                <a href="https://discord.com/users/1266981100199088161" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path
+                            d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div id="center">
+            <pre>
+▞▀▖▀▛▘▞▀▖▛▀▖▙▗▌
+▚▄  ▌ ▌ ▌▙▄▘▌▘▌
+▖ ▌ ▌ ▌ ▌▌▚ ▌ ▌
+▝▀  ▘ ▝▀ ▘ ▘▘ ▘
+</pre>
+            <div id="typewriter"></div>
+        </div>
+    </div>
+
+    <script>
+        frontpage.onclick = () => {
+            bgm.play().catch(() => { });
+            frontpage.style.opacity = 0;
+            setTimeout(() => {
+                frontpage.style.display = "none";
+                page2.style.display = "block";
+            }, 800);
+        };
+
+        const lines = [
+            "im broke and i got exited for an es",
+            "i got exited by shootables for 250"
+        ];
+
+        const el = document.getElementById("typewriter");
+
+        let line = 0;
+        let char = 0;
+        let deleting = false;
+        let pause = false;
+
+        function typeLoop() {
+            const text = lines[line];
+
+            if (pause) {
+                setTimeout(() => {pause = false; typeLoop();}, 700);
+                return;
+            }
+
+            if (!deleting) {
+                char++;
+                el.textContent = text.slice(0, char);
+                if (char === text.length) {
+                    deleting = true;
+                    pause = true;
+                }
+            } else {
+                char--;
+                el.textContent = text.slice(0, char);
+                if (char === 0) {
+                    deleting = false;
+                    line = (line + 1) % lines.length;
+                    pause = true;
+                }
+            }
+
+            setTimeout(typeLoop, deleting ? 40 : 70);
+        }
+
+        typeLoop();
+
+        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+            const c = document.getElementById("custom-cursor");
+            document.addEventListener("mousemove", e => {
+                c.style.left = e.clientX + "px";
+                c.style.top = e.clientY + "px";
+            });
+        } else {
+            document.getElementById("custom-cursor").remove();
+        }
+    </script>
+
+</body>
+
+</html>
